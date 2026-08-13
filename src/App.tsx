@@ -135,11 +135,13 @@ export default function Home() {
   };
 
   const pauseDemo = () => {
-    // BUG-05: 暂停错误地执行了完整重置,进度与日志全部清零
     setDemoRunning(false);
+    setDemoPaused(true);
+  };
+
+  const resumeDemo = () => {
+    setDemoRunning(true);
     setDemoPaused(false);
-    setProgress(0);
-    setDemoComplete(false);
   };
 
   const selectWorkflow = (index: number) => {
@@ -216,7 +218,7 @@ export default function Home() {
                 <p className={progress >= 72 ? "done" : ""}><i>03</i><span>生成补丁并运行 28 项测试</span><b>✓</b></p>
               </div>
               <div className="run-progress"><div><span>SANDBOX PROGRESS</span><b>{progress}%</b></div><i><b style={{ width: `${progress}%` }} /></i></div>
-              <div className="run-actions"><button type="button" onClick={pauseDemo}>{demoRunning ? "暂停" : demoPaused ? "继续" : "重置"}</button><button type="button" onClick={startDemo}>{demoRunning ? "重新运行" : "运行任务"} <span>→</span></button></div>
+              <div className="run-actions"><button type="button" onClick={demoRunning ? pauseDemo : demoPaused ? resumeDemo : startDemo}>{demoRunning ? "暂停" : demoPaused ? "继续" : "重置"}</button><button type="button" onClick={startDemo}>{demoRunning ? "重新运行" : "运行任务"} <span>→</span></button></div>
             </aside>
           </div>
           <div className="console-ticker"><span>PATCH <b>+18 −6</b></span><span>TESTS <b>28/28</b></span><span>FILES <b>03</b></span><span>ELAPSED <b>08:42</b></span></div>
