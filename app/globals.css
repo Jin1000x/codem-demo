@@ -71,8 +71,8 @@ img { display: block; max-width: 100%; }
 .broadcast-id i { width: 6px; height: 6px; border-radius: 50%; background: #ff3b30; box-shadow: 0 0 0 4px rgba(255, 59, 48, 0.12); }
 .broadcast-id span { color: var(--muted); font-weight: 500; }
 .nav-links { display: flex; gap: 26px; margin-left: auto; color: #3c3f46; font-size: 12px; }
-.nav-links a { transition: color 160ms ease; }
-.nav-links a:hover { color: var(--blue); }
+.nav-links a { transition: color 160ms ease, font-size 160ms ease; }
+.nav-links a:hover { color: var(--blue); font-size: 14px; }
 .header-actions { display: flex; align-items: center; gap: 8px; margin-left: 28px; }
 .live-status { display: inline-flex; align-items: center; gap: 7px; margin-right: 4px; color: var(--muted); font-family: var(--mono); font-size: 9px; }
 .live-status i { width: 6px; height: 6px; border-radius: 50%; background: var(--green); box-shadow: 0 0 0 4px rgba(76, 209, 119, 0.12); animation: pulse 1.8s ease infinite; }
