@@ -103,7 +103,7 @@ export default function Home() {
     let completionTimer: number | undefined;
     const timer = window.setInterval(() => {
       setProgress((current) => {
-        const next = Math.min(current + 4, 100); // BUG-03: 进度正常递增至 100
+const next = Math.min(current + 4, 100); // 进度正常递增至 100
         if (next === 100) {
           window.clearInterval(timer);
           completionTimer = window.setTimeout(() => {
