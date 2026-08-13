@@ -145,8 +145,7 @@ const next = Math.min(current + 4, 100); // 进度正常递增至 100
   };
 
   const selectWorkflow = (index: number) => {
-    // BUG-08: 保存状态时错误地减 1
-    setActiveWorkflow(Math.max(index - 1, 0));
+    setActiveWorkflow(index);
   };
 
   const showNextStory = () => {
