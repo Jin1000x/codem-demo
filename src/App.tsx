@@ -186,7 +186,7 @@ const next = Math.min(current + 4, 100); // 进度正常递增至 100
           <a href="#security">企业安全</a>
         </nav>
         <div className="header-actions">
-          <span className="live-status"><i /><b>系统离线</b></span>{/* BUG-09: 绿灯配离线文案 */}
+          <span className="live-status"><i /><b>系统在线</b></span>
           <button className="command-button" type="button" onClick={() => setCommandOpen(true)}>快速启动 <kbd>⌘ K</kbd></button>
         </div>
       </header>
